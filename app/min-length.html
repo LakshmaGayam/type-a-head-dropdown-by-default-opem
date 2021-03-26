@@ -1,0 +1,9 @@
+<pre class="card card-block card-header mb-3">Model: {{selected | json}}</pre>
+<input [(ngModel)]="selected"   (typeaheadOnSelect)="onSelect($event)"
+       [typeahead]="states2" [isAnimated]="true"
+       [typeaheadMinLength]="0" 
+         [typeaheadItemTemplate]="customItemTemplate"
+       class="form-control">
+       <ng-template #customItemTemplate let-model="item">
+    <span><strong>{{model.name}}</strong></span>
+  </ng-template>
